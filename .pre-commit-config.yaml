@@ -16,9 +16,9 @@ repos:
     entry: hatch fmt -l
     language: system
     types: [python]
-  # - id: types
-  #   stages: [pre-commit]
-  #   name: types
-  #   entry: hatch run types:check
-  #   language: system
-  #   types: [python]
+  - id: types
+    stages: [pre-commit]
+    name: types
+    entry: hatch run types:check
+    language: system
+    types: [python]
