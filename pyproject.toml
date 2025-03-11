@@ -1,0 +1,63 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "swe4py-example"
+dynamic = ["version"]
+description = ''
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+keywords = []
+authors = [
+  { name = "DropD", email = "rico.haeuselmann@gmail.com" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = [
+  "click",
+]
+
+[project.urls]
+Documentation = "https://github.com/DropD/swe4py-example#readme"
+Issues = "https://github.com/DropD/swe4py-example/issues"
+Source = "https://github.com/DropD/swe4py-example"
+
+[project.scripts]
+swe4py-example = "swe4py_example.cli:swe4py_example"
+
+[tool.hatch.version]
+path = "src/swe4py_example/__about__.py"
+
+[tool.hatch.envs.types]
+extra-dependencies = [
+  "mypy>=1.0.0",
+]
+[tool.hatch.envs.types.scripts]
+check = "mypy --install-types --non-interactive {args:src/swe4py_example tests}"
+
+[tool.coverage.run]
+source_pkgs = ["swe4py_example", "tests"]
+branch = true
+parallel = true
+omit = [
+  "src/swe4py_example/__about__.py",
+]
+
+[tool.coverage.paths]
+swe4py_example = ["src/swe4py_example", "*/swe4py-example/src/swe4py_example"]
+tests = ["tests", "*/swe4py-example/tests"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]
