@@ -1,0 +1,24 @@
+default_language_version:
+  python: python3.12
+
+repos:
+- repo: local
+  hooks:
+  - id: format
+    stages: [pre-commit]
+    name: format
+    entry: hatch fmt -f
+    language: system
+    types: [python]
+  - id: lint
+    stages: [pre-commit]
+    name: lint
+    entry: hatch fmt -l
+    language: system
+    types: [python]
+  # - id: types
+  #   stages: [pre-commit]
+  #   name: types
+  #   entry: hatch run types:check
+  #   language: system
+  #   types: [python]
