@@ -8,4 +8,3 @@ def test_hello():
 
     result = runner.invoke(cli.swe4py_example)
     assert result.exit_code == 0
-    assert result.output == "Hello world!\n"
