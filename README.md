@@ -3,7 +3,7 @@
 [![PyPI - Version](https://img.shields.io/pypi/v/swe4py-example.svg)](https://pypi.org/project/swe4py-example)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/swe4py-example.svg)](https://pypi.org/project/swe4py-example)
 
------
+---
 
 ## Table of Contents
 
