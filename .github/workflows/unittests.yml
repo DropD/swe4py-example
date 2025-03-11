@@ -28,4 +28,4 @@ jobs:
         pip install hatch
 
     - name: run unittests
-      run: hatch test -py ${{matrix.python-version}} -v
+      run: hatch test -py ${{matrix.python-version}} -v --cover
