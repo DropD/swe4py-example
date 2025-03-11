@@ -1,0 +1,7 @@
+__pycache__/
+.git/
+.pytest_cache/
+
+# Always put this!
+src/__init__.py
+tests/__init__.py
